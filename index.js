@@ -1,15 +1,4 @@
 
-
-
-// Safe fallback for singleplayer builds
-function isMultiplayer() {
-  try {
-    if (typeof GM_is_multiplayer === "function") {
-      return GM_is_multiplayer() !== 0;
-    }
-  } catch (e) {}
-  return false;
-}
 const CHANGE_ASPECT_RATIO = true;
 
 var bodyElement = document.getElementsByTagName("body")[0];
