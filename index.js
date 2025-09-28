@@ -886,9 +886,18 @@ if (/Android|iPhone|iPod/i.test(navigator.userAgent)) {
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
     pause();
+function isMultiplayer() {
+    return false; // change to true if multiplayer is added later
+}
+
+document.addEventListener("visibilitychange", (event) => {
+  if (document.visibilityState != "visible") {
+    pause();
   } else if (isMultiplayer()) {
     resume();
   }
+});
+
 });
 
 window.addEventListener("load", (event) => {
