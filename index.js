@@ -883,12 +883,7 @@ if (/Android|iPhone|iPod/i.test(navigator.userAgent)) {
   outputContainerElement.hidden = true;
 }
 
-document.addEventListener("visibilitychange", (event) => {
-  if (document.visibilityState != "visible") {
-    pause();
-function isMultiplayer() {
-    return false; // change to true if multiplayer is added later
-}
+
 
 document.addEventListener("visibilitychange", (event) => {
   if (document.visibilityState != "visible") {
@@ -898,7 +893,6 @@ document.addEventListener("visibilitychange", (event) => {
   }
 });
 
-});
 
 window.addEventListener("load", (event) => {
   if ((!window.oprt || !window.oprt.enterFullscreen) && (!window.chrome || !window.chrome.runtime || !window.chrome.runtime.sendMessage)) {
