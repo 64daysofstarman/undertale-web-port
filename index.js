@@ -69,11 +69,13 @@ var Module = {
       }
     };
   })(),
+  /*
   printErr: function (text) {
     if (arguments.length > 1)
       text = Array.prototype.slice.call(arguments).join(" ");
     console.error(text);
   },
+  */
   canvas: (function () {
     var canvas = document.getElementById("canvas");
 
@@ -125,7 +127,6 @@ var Module = {
 Module.setStatus("Downloading...");
 window.onerror = function (event) {
   // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
-  Module.setStatus("Exception thrown, see JavaScript console");
   spinnerElement.style.display = "none";
   Module.setStatus = function (text) {
     if (text) Module.printErr("[post-exception status] " + text);

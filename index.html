@@ -386,7 +386,16 @@ document.addEventListener('visibilitychange', function () {
   }
 });
 </script>
+	  
 <script>
+function handleBeforeUnload(event) {
+  event.preventDefault(); 
+  event.returnValue = ''; 
+}
+
+window.addEventListener('beforeunload', handleBeforeUnload);
+</script>
+	  <script>
       function mergeFiles(fileParts) {
           return new Promise((resolve, reject) => {
               let buffers = [];
